@@ -43,6 +43,7 @@ class VkUser:
         photos = self.get_user_avatar()
         photo_names = []
         json_list = []
+        # Добавлен прогресс-бар с помощью библиоткеи tqdm для наглядности отображения загрузки
         with tqdm(total=len(photos), desc='Downloading photos') as pbar:
             for photo in photos:
                 sizes = photo['sizes']
